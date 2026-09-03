@@ -10,29 +10,21 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # State management
   provider: ^6.1.2
 
-  # SQLite (desktop-compatible, uses FFI on Windows)
   sqflite_common_ffi: ^2.3.3
   sqflite: ^2.3.3+1
   path: ^1.9.0
   path_provider: ^2.1.4
 
-  # Windows desktop window control (used to implement the compact
-  # Alt+V popup by resizing/repositioning/showing-hiding the app window)
   window_manager: ^0.4.2
 
-  # System tray (real native tray icon + menu)
   tray_manager: ^0.2.3
 
-  # Global hotkey registration (real OS-level hotkey, not a Flutter-only shortcut)
   hotkey_manager: ^0.2.3
 
-  # Real clipboard change monitoring via native OS clipboard listener
   clipboard_watcher: ^0.2.0
 
-  # Utilities
   crypto: ^3.0.5
   uuid: ^4.4.2
   intl: ^0.19.0
@@ -43,18 +35,22 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   flutter_lints: ^4.0.0
+
   msix: ^3.16.7
 
 flutter:
   uses-material-design: true
+
   assets:
     - assets/icons/
 
 msix_config:
   display_name: ClipHold
-  publisher_display_name: Santhosh S
+  publisher_display_name: Santhosh
   identity_name: com.cliphold.app
   msix_version: 1.0.0.0
   logo_path: windows_config/resources/app_icon.ico
   capabilities: ""
+  install_certificate: false
