@@ -41,7 +41,9 @@ msix_config:
   display_name: ClipBox
   publisher_display_name: santhosh4816j
   identity_name: santhosh4816j.ClipBox
+  publisher: CN=56A045A8-7F10-4271-9A86-566887D6E7CD
   msix_version: 1.0.0.0
   logo_path: windows_config/resources/app_icon.ico
   capabilities: ""
   install_certificate: false
+  store: true
