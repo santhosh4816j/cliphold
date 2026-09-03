@@ -1,4 +1,4 @@
-name: Build ClipHold MSIX
+name: Build ClipBox MSIX
 
 on:
   workflow_dispatch:
@@ -41,5 +41,5 @@ jobs:
       - name: Upload MSIX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ClipHold-msix
+          name: ClipBox-msix
           path: build/windows/x64/runner/Release/*.msix
