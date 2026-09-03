@@ -2,32 +2,44 @@ name: Build ClipHold MSIX
 
 on:
   workflow_dispatch:
+
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: stable
 
-      - run: flutter config --enable-windows-desktop
+      - name: Enable Windows desktop
+        run: flutter config --enable-windows-desktop
 
-      - run: flutter pub get
+      - name: Install dependencies
+        run: flutter pub get
 
-      - run: flutter create --platforms=windows .
+      - name: Create Windows project
+        run: flutter create --platforms=windows .
 
-      - run: copy windows_config\resources\app_icon.ico windows\runner\resources\app_icon.ico
+      - name: Copy application icon
+        run: copy windows_config\resources\app_icon.ico windows\runner\resources\app_icon.ico
 
-      - run: flutter build windows --release
+      - name: Build Windows application
+        run: flutter build windows --release
 
-      - run: flutter pub run msix:create
+      - name: Create MSIX package
+        run: dart run msix:create
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload MSIX artifact
+        uses: actions/upload-artifact@v4
         with:
           name: ClipHold-msix
           path: build/windows/x64/runner/Release/*.msix
