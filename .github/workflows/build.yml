@@ -35,8 +35,8 @@ jobs:
       - name: Build Windows application
         run: flutter build windows --release
 
-      - name: Create MSIX package
-        run: dart run msix:create
+      - name: Create Store MSIX package
+        run: dart run msix:create --store
 
       - name: Upload MSIX artifact
         uses: actions/upload-artifact@v4
