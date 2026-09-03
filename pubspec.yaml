@@ -1,5 +1,5 @@
 name: cliphold
-description: "ClipHold - Your clipboard. Remembered. Private."
+description: "ClipBox - Your clipboard. Remembered. Private."
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -28,7 +28,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^4.0.0
   msix: ^3.16.7
 
@@ -39,9 +38,9 @@ flutter:
     - assets/icons/
 
 msix_config:
-  display_name: ClipHold
+  display_name: ClipBox
   publisher_display_name: santhosh4816j
-  identity_name: com.cliphold.app
+  identity_name: santhosh4816j.ClipBox
   msix_version: 1.0.0.0
   logo_path: windows_config/resources/app_icon.ico
   capabilities: ""
