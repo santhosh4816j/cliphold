@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/clip_item.dart';
+import '../models/enums.dart';
 import '../utils/ui_helpers.dart';
 
 class ClipboardCard extends StatelessWidget {
